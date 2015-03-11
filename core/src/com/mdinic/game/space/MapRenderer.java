@@ -94,6 +94,8 @@ public class MapRenderer {
 
             a.bounds.width, a.bounds.height, 1f, 1f, a.rotation, true);
 
+            // batch.draw(ship, a.topRight.x, a.topRight.y, 0.1f, 0.1f);
+
             // batch.draw(sprite, (Gdx.graphics.getWidth() -
             // sprite.getRegionWidth()) / 2.0f,
             // (Gdx.graphics.getHeight() - sprite.getRegionHeight()) / 2.0f,

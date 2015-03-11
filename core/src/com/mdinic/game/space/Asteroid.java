@@ -2,7 +2,7 @@ package com.mdinic.game.space;
 
 import java.util.Random;
 
-public class Asteroid extends GfxItem {
+public class Asteroid extends CollidableGfxItem {
 
     AsteroidType type;
 
@@ -12,6 +12,9 @@ public class Asteroid extends GfxItem {
 
         bounds.width = 2f;
         bounds.height = 2f;
+        v = 0.3f;
+        directionX = DirectionX.values()[new Random().nextInt(DirectionX.values().length - 1)];
+        directionY = DirectionY.values()[new Random().nextInt(DirectionY.values().length - 1)];
     }
 
     @Override

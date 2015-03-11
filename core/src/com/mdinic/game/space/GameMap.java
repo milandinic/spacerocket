@@ -36,6 +36,7 @@ public class GameMap {
     public boolean demo = false;
 
     Array<Asteroid> asteroids = new Array<Asteroid>();
+    Array<CollidableGfxItem> collidableItems = new Array<CollidableGfxItem>();
 
     int pixmapHeight;
     final Sounds sounds;
@@ -88,9 +89,11 @@ public class GameMap {
                 if (match(pix, START)) {
                     ship = new Ship(this, x, newY);
                     System.out.println("start");
-
+                    collidableItems.add(ship);
                 } else if (match(pix, ASTEROID)) {
-                    asteroids.add(new Asteroid(this, x, newY));
+                    Asteroid asteroid = new Asteroid(this, x, newY);
+                    asteroids.add(asteroid);
+                    collidableItems.add(asteroid);
                 }
             }
         }
